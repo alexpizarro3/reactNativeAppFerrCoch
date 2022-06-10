@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react"; //Importa todas las dependencias de react
+import { NavigationContainer } from '@react-navigation/native'; //Importa todas las dependecnias de Navigation
+import { createNativeStackNavigator } from '@react-navigation/native-stack'; //Importa todas las dependecnias de native stack
 
-export default function App() {
+import HomeScreen from './screens/HomeScreen'; //Importa de screens HomeScreen
+import Login from './screens/Login'; //Importa de screens Login
+import PowerBiScreen from "./screens/PowerBiScreen"; //Importa de screens PowerBiScreen
+
+const Stack = createNativeStackNavigator(); //Crea un Native Stack Navigator
+
+const App = () => { //Crea un Contenedor de screens con App y con la variable Stack
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="PowerBiScreen" component={PowerBiScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App; // Envia App a la aplicacion
