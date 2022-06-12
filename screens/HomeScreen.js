@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Dimensions } from 'react-native'
+import { View, Text, StyleSheet, Dimensions, Image } from 'react-native'
 import React from 'react'
 const { width, fontScale } = Dimensions.get("window");
 
@@ -8,14 +8,15 @@ const HomeScreen = () => {
       // Try setting `flexDirection` to `"row"`.
       flexDirection: "column"
     }]}>
-      <View style={{ flex: 1, backgroundColor: "#DFF2D8", justifyContent: "center" }}>
-        <Text style={styles.titles}>Ferreteria la Cochinita</Text>
-      </View>
-      <View style={{ flex: 2, backgroundColor: "#C6DEA6", justifyContent: "center" }} >
-        <Text style={styles.titles}>Bussiness Inteligence</Text>
-      </View>
-      <View style={{ flex: 3, backgroundColor: "#7EBDC3", justifyContent: "center" }} >
+      <View style={{ flex: 1, backgroundColor: "#DFF2D8", justifyContent: "center", borderRadius: 5 }}>
         <Text style={styles.titles}>Login</Text>
+      </View>
+      <View style={{ flex: 3, backgroundColor: "yellow", justifyContent: "center", borderRadius: 5 }} >
+        <Text style={styles.subtitles} >Bussiness Inteligence PW</Text>
+        <Image style={{ width: 100, height: 100 }} source={require('../images/pw.png')} />
+      </View>
+      <View style={{ flex: 0.5, backgroundColor: "#7EBDC3", justifyContent: "center", borderRadius: 5 }} >
+        <Text style={styles.titles}>Ferreteria la Cochinita</Text>
       </View>
     </View>
   )
@@ -24,15 +25,24 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
-    textAlign: "center",
-    fontSize: 30,
+    padding: 2,
+    backgroundColor: "black",
+    
+  },
+  blocks: {
+    justifyContent: "center",
+    borderRadius: 10,
   },
   titles: {
     fontSize: 30,
     textAlign: "center",
+    color: "black",
   },
-
+  subtitles: {
+    fontSize: 15,
+    textAlign: "center",
+    color: "black",
+  },
 });
 
 export default HomeScreen
