@@ -12,8 +12,8 @@ const App = () => { //Crea un Contenedor de screens con App y con la variable St
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="PowerBiScreen" component={PowerBiScreen} />
       </Stack.Navigator>
     </NavigationContainer>
