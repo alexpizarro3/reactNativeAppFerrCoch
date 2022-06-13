@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Dimensions, Image } from 'react-native' // RNFE Imports necesarios
+import { View, Text, StyleSheet, Dimensions, Image, TouchableOpacity } from 'react-native' // RNFE Imports necesarios
 import React from 'react'
 const { width, fontScale } = Dimensions.get("window"); //Variables de la pantalla para autoajuste
 import Custombutton from '../components/CustomButton/Custombutton'; //Importa el custom buttom
@@ -8,7 +8,6 @@ const HomeScreen = () => {
 
   const navigation = useNavigation();
   const onLogginPressed = () => {
-    console.warn('Pasar a Loggin');
     navigation.navigate('Login');
   };
 
@@ -17,8 +16,10 @@ const HomeScreen = () => {
       // Desde aqui se puede hacer columnas o filas en la pantalla usando flexbox usamos 3 views para darle formato al screen
       flexDirection: "column"
     }]}>
-      <View style={{ flex: 1, backgroundColor: "#2DC7FF", justifyContent: "center", borderRadius: 1, alignItems:"center" }}>
-      <Custombutton text="Loggin" onPress={onLogginPressed} />
+      <View style={{ flex: 1, backgroundColor: "#2DC7FF", justifyContent: "center", borderRadius: 1, alignItems: "center" }}>
+        <TouchableOpacity onPress= {onLogginPressed}>
+          <Text style={styles.titles} >Loggin</Text>
+        </TouchableOpacity>
       </View>
       <View style={{ flex: 3, backgroundColor: "#00ABE7", justifyContent: "center", borderRadius: 1, alignItems: "center" }} >
         <Text style={styles.subtitles} >Bussiness Inteligence PW</Text>
