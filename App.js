@@ -1,14 +1,14 @@
 import React from "react"; //Importa todas las dependencias de react
 import { NavigationContainer } from '@react-navigation/native'; //Importa todas las dependecnias de Navigation
 import { createNativeStackNavigator } from '@react-navigation/native-stack'; //Importa todas las dependecnias de native stack
-
 import HomeScreen from './screens/HomeScreen'; //Importa de screens HomeScreen
 import Login from './screens/Login'; //Importa de screens Login
 import PowerBiScreen from "./screens/PowerBiScreen"; //Importa de screens PowerBiScreen
+import Navigation from "./navigation";
 
 const Stack = createNativeStackNavigator(); //Crea un Native Stack Navigator
 
-const App = () => { //Crea un Contenedor de screens con App y con la variable Stack
+const App = () => { //Crea un Contenedor de screens con App y con la variable Stack ... El orden del stack screen es importante
   return (
     <NavigationContainer>
       <Stack.Navigator>

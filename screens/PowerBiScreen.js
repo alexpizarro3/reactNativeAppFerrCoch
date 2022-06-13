@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text } from 'react-native' // RNFE
 import React from 'react'
 
 const PowerBiScreen = () => {
@@ -10,3 +10,4 @@ const PowerBiScreen = () => {
 }
 
 export default PowerBiScreen;
+
