@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
     textAlign: "center",
     color: "black",
+    padding: 20,
   },
   name: { //Da formato al nombre del negocio
     fontSize: 25,
