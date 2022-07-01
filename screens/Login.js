@@ -8,7 +8,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { useNavigation } from '@react-navigation/native'; //Importa navigation
 
 const Login = () => {
-    //const [user, setUser] = useState([]); //Variables que almacenan en arreglo el resultado de consultar api users
+    const [user, setUser] = useState([]); //Variables que almacenan en arreglo el resultado de consultar api users
     const { height } = useWindowDimensions(); //Clase que almacena la altura del screen del dispositivo usado
     const navigation = useNavigation(); //variable que instancia useNavigation
     const {
@@ -18,15 +18,19 @@ const Login = () => {
     } = useForm();
 
 
-    /* const dataUser = async () => { //Funcion que obtiene del api los usuarios
-        const loadData = await obtenerUsuario();
+    const dataUser = async (cedula, password) => { //Funcion que obtiene del api los usuarios
+        const loadData = await obtenerUsuario(cedula, password);
         setUser(loadData);
-    } */
+        if (typeof loadData.message === 'undefined') {
+            navigation.navigate('PowerBiScreen'); //Navega hacia la pantalla de PowerBiScreen
+        } else {
+            console.warn(loadData.message);
+        }
+    }
     console.log(errors);
 
     const onLogginPressed = data => {
-        console.log(data);
-        navigation.navigate('PowerBiScreen'); //Navega hacia la pantalla de PowerBiScreen
+        dataUser(data.cedula, data.password);
     };
 
     /* useEffect(() => { //Funcion que ejecuta datauser de primero es como el Init de otros lenguajes

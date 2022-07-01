@@ -34,7 +34,7 @@ const Custominput = ({
 const styles = StyleSheet.create({
     container: {
         backgroundColor: "#fefae0",
-        width: "100%",
+        width: "95%",
         borderColor: '#e8e8e8',
         borderWidth: 1,
         borderRadius: 5,
