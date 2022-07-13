@@ -24,7 +24,7 @@ const Login = () => {
         if (typeof loadData.message === 'undefined') {
             navigation.navigate('PowerBiScreen'); //Navega hacia la pantalla de PowerBiScreen
         } else {
-            console.warn(loadData.message);
+            Alert.alert('Error de autenticacion', 'Cedula o Password incorrecto');
         }
     }
     console.log(errors);
