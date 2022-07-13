@@ -22,13 +22,13 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./images/Lacochinita.png",
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.alexpizarro3.myfirstapp"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./images/Lacochinita.png"
     }
   }
 }
