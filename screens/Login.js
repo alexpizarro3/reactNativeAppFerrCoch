@@ -22,6 +22,7 @@ const Login = () => {
         const loadData = await obtenerUsuario(cedula, password);
         setUser(loadData);
         if (typeof loadData.message === 'undefined') {
+            Alert.alert('Credenciales correctas');
             navigation.navigate('PowerBiScreen'); //Navega hacia la pantalla de PowerBiScreen
         } else {
             Alert.alert('Error de autenticacion', 'Cedula o Password incorrecto');
